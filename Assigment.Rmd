@@ -1,0 +1,76 @@
+---
+title: "assigment"
+author: "Ummuhan"
+date: "1/23/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+# 1.Create a Matrix
+matrix(1:40)
+matrix(1:40,ncol=5)
+matrix(1:40,nrow=8)
+matrix(1:40,ncol=5) ->mymatrix
+mymatrix
+mymatrix[4,mymatrix[4,] %% 3 ==0]
+mymatrix[4,]%% 3 ==0
+mymatrix[4,5]
+# 2. Identify the Data Type
+#Assign a numeric
+a <- 13
+#Find the datatype
+mode(a)
+typeof(a)
+
+# Assign a character
+y='homework'
+
+#Find the datatype
+mode(y)
+typeof(y)
+
+#3. Identity the Mean & Median
+x <- c(14,5,3,22,-8,9,-3,45,12,43,8,6)
+# Find Mean
+result.mean <- mean(x) 
+print(result.mean)
+
+# Find Mean with Trim
+result.mean <- mean(x,trim = 0.2)
+print(result.mean)
+
+# Find Median
+median.result <- median(x)
+print(median.result)
+
+#4. Find the mode(s) 
+getModes <- function(x) {
+  uniqx <- unique(x)
+  tab <- tabulate(match(x, uniqx))
+  uniqx[tab == max(tab)]
+}
+
+x <-  c( 3,4,3,5,3,6,7,2,1,2,6,7,8,6)
+result <- getModes(x)
+print(result)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
