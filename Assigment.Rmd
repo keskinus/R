@@ -1,6 +1,5 @@
 ---
 title: "assigment"
-author: "Ummuhan"
 date: "1/23/2021"
 output: html_document
 ---
